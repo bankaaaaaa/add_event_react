@@ -28,7 +28,7 @@ const StyledMapWithAnInfoBox = compose(
       <InfoBox>
         <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
           <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-            Please click to see Date<br/>
+            Click to see date<br/>
             Event Name: {props.event}<br/>
             lattitude:{props.lattitude},
             longitude:{props.longitude}
