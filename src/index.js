@@ -2,9 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import './index.css';
 import Maps from './components/maps'
+
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
+
+
+
 
 class Location extends React.Component {
 	constructor(props) {
@@ -13,7 +17,9 @@ class Location extends React.Component {
 			lattitude: '',
 			longitude: '',
 			event: '',
+
 			startDate: moment(),
+
 			clicked: false,
 			initialclicked: true
 		};
@@ -50,7 +56,9 @@ class Location extends React.Component {
 				Date: <DatePicker  onChange={this.handleChange} selected={this.state.startDate} /><br/>
 				<button type="submit" className='btn btn-lg btn-primary form-control'>Submit</button>
 			</form>
+
 			{this.state.clicked && <Maps lattitude={this.state.lattitude} longitude={this.state.longitude} event={this.state.event} date={this.state.startDate._d.toDateString()} /> }
+
 			{this.state.initialclicked && <Maps lattitude={22.5689589} longitude={88.428938} event={'office'} date={new Date().toDateString()} /> }
 			<br/><br/>
 			
