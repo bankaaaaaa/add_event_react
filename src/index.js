@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import './index.css';
 import Maps from './components/maps'
-import Autocomplete from 'react-google-autocomplete';
 
 
 class Location extends React.Component {
@@ -13,7 +12,8 @@ class Location extends React.Component {
 			longitude: '',
 			event: '',
 			date: '',
-			clicked: false
+			clicked: false,
+			initialclicked: true
 		};
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,9 +26,9 @@ class Location extends React.Component {
 	}
 
 	handleSubmit(e) {
+		this.setState({clicked: false, initialclicked: false});
 		this.setState({clicked: true});
 		e.preventDefault();
-
 	}
 	render() {
 		return(
@@ -42,6 +42,7 @@ class Location extends React.Component {
 				<button type="submit" className='btn btn-lg btn-primary form-control'>Submit</button>
 			</form>
 			{this.state.clicked && <Maps lattitude={this.state.lattitude} longitude={this.state.longitude} event={this.state.event} date={this.state.date} /> }
+			{this.state.initialclicked && <Maps lattitude={22.5689589} longitude={88.428938} event={'office'} date={new Date().toDateString()} /> }
 			<br/><br/>
 			
 			</div>
