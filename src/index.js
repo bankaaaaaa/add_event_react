@@ -29,7 +29,6 @@ class Location extends React.Component {
 	}
 
 	handleChange(date) {
-		console.log("date",date._d);
     this.setState({
       startDate: date
     });
