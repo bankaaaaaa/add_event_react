@@ -64,7 +64,7 @@ class Maps extends Component{
     return(
       <div>
         <StyledMapWithAnInfoBox
-          googleMapURL="https://maps.googleapis.com/maps/api/js?libraries=places&key= AIzaSyCJ3eRLjWxeiUThvW3CkHX1_S4JBfxCJ2o "
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXSMB8nS3Crv9vxsUQUz8zNM4HDyz1Mos&callback=initMap"
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
